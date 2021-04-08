@@ -24,7 +24,6 @@ async function authenticate({ username, password }) {
     }
 }
 
-
 async function getAll() {
     return await User.find();
 }

@@ -28,4 +28,4 @@ student.set('toJSON', {
     }
 });
 
-module.exports = mongoose.model('Student', student);
+module.exports = mongoose.model('User', student);

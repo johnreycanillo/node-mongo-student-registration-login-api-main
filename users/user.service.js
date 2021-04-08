@@ -36,7 +36,7 @@ async function getById(id) {
 async function create(userParam) {
     // validate
     if (await User.findOne({ username: userParam.username })) {
-        throw 'Username "' + userParam.username + '" is already taken';
+        throw 'StudentID "' + userParam.username + '" is already taken';
     }
 
     const user = new User(userParam);
@@ -54,9 +54,9 @@ async function update(id, userParam) {
     const user = await User.findById(id);
 
     // validate
-    if (!user) throw 'Username not found';
+    if (!user) throw 'StudentID not found';
     if (user.username !== userParam.username && await User.findOne({ username: userParam.username })) {
-        throw 'Username "' + userParam.username + '" is already taken';
+        throw 'StudentID "' + userParam.username + '" is already taken';
     }
 
     // hash password if it was entered
